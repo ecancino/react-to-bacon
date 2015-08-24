@@ -32,7 +32,11 @@ gulp.task('clean', function () {
 
 gulp.task('jade', function () {
   return gulp.src('./src/index.jade')
-    .pipe(jade())
+    .pipe(jade({
+      data: {
+        title: 'Gulp Boilerplate'
+      }
+    }))
     .pipe(gulp.dest('./public'))
     .pipe(livereload(livereload_server));
 });
@@ -62,7 +66,12 @@ gulp.task('sass', function () {
     .pipe(livereload(livereload_server));
 });
 
-gulp.task('build', ['jade', 'es6', 'sass'], function(cb) {
+gulp.task('static', function () {
+  return gulp.src('./node_modules/bootstrap-sass/assets/fonts/bootstrap/*.*')
+    .pipe(gulp.dest('./public/fonts'));
+});
+
+gulp.task('build', ['static', 'jade', 'es6', 'sass'], function(cb) {
   cb();
 });
 
