@@ -5,24 +5,19 @@ html(lang='en')
     meta(http-equiv='X-UA-Compatible', content='IE=edge')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     title #{title}
-    link(href='css/app.min.css', rel='stylesheet')
+    link(rel='stylesheet', href='css/app.min.css')
   body
-
-    nav.navbar.navbar-inverse.navbar-fixed-top
-      .container
-        .navbar-header
-          button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
-            span.sr-only Toggle navigation
-            span.glyphicon.glyphicon-align-justify
-          a.navbar-brand(href='#')
+    nav(class='navbar navbar-inverse navbar-fixed-top')
+      section(class='container')
+        section(class='navbar-header')
+          a(href='#', class='navbar-brand')
             i(class='glyphicon glyphicon-user')
             | &nbsp; #{title}
 
-    section(id='main')
-      .container
+    section(id='main', class='container')
 
-    footer.footer
-      .container
+    footer(class='footer')
+      section(class='container')
         | Made with&nbsp;
         a(href='http://gulpjs.com/', target='_blank') Gulp
 

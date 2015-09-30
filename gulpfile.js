@@ -34,7 +34,7 @@ gulp.task('jade', function () {
   return gulp.src('./src/index.jade')
     .pipe(jade({
       data: {
-        title: 'Gulp Boilerplate'
+        title: 'React to Bacon'
       }
     }))
     .pipe(gulp.dest('./public'))
@@ -51,7 +51,7 @@ gulp.task('es6', function () {
     .pipe(jshint())
     .pipe(gulp.dest('./tmp'))
     .pipe(rename({suffix: '.min', extname: '.js'}))
-    .pipe(uglify())
+    //.pipe(uglify())
     .pipe(gulp.dest('./public/js'))
     .pipe(livereload(livereload_server));
 });
@@ -61,7 +61,7 @@ gulp.task('sass', function () {
     .pipe(sass())
     .pipe(gulp.dest('./tmp'))
     .pipe(rename({suffix: '.min', extname: '.css'}))
-    .pipe(minify({keepSpecialComments: 0}))
+    //.pipe(minify({keepSpecialComments: 0}))
     .pipe(gulp.dest('./public/css'))
     .pipe(livereload(livereload_server));
 });

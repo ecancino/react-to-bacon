@@ -1,4 +1,4 @@
-# Gulp Boilerplate
+# React & Bacon
 
 * npm install
 * gulp
